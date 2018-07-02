@@ -122,6 +122,12 @@ class Server
 
         require_once $this->entrance;
 
+        //自定义回调事件,添加进程
+        if ($this-servicesInfo["onInitServer"]) {
+            $this->servicesInfo["onInitServer"]($this->sw , $this->tarsConfig);
+        }
+
+
         $this->sw->start();
     }
 
