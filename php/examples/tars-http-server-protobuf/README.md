@@ -4,6 +4,11 @@
 
 
 
+
+
+前提: 测试  tars-http-server 没有问题 后 
+
+
 安装: cd src/ && composer install && cd ..
 
 更新  支持 自定义的 onInitServer:
@@ -90,3 +95,11 @@ controler 在 ./src/app/Controllers/ 下
     }
 
 ```
+
+# 支持 热更新 
+
+sudo pecl install inotify
+
+You should add "extension=inotify.so" to php.ini
+
+
