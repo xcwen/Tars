@@ -282,6 +282,10 @@ class Tars {
     }
 
     static public  function add_watch_process($serv, $project_name) {
+
+        if(!function_exists( "inotify_init" ) ) {
+            return ;
+        }
         $process1 = new \swoole_process(function ($worker) use ($serv,$project_name) {
 
             $process_name=$project_name.': task notify';
